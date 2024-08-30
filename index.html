@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monofett&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="welcome-screen">
+        <div class="logo">
+            <img class="img-logo" src="images/typing-logo.png" alt="logo">
+            <h1 class="name-logo">NU <br> Typing</h1>
+        </div>
+        <h2 id="dynamic-heading">Welcome, my friend!</h2>
+        <h3>Let's see how many scores you get to test how fast you can type</h3>
+        <div id="language-selector">
+            <label class="retro-checkbox">
+                <input type="checkbox" id="english-checkbox"> 
+                <span>English</span>
+            </label>
+            <label class="retro-checkbox">
+                <input type="checkbox" id="indonesian-checkbox"> 
+                <span>Indonesia</span>
+            </label>
+        </div>
+        <button id="start-btn" class="retro-btn">> Start</button>
+    </div>
+
+    <div id="game-screen">
+        <div id="timer">Time: 30</div>
+        <div id="line"></div>
+        <input type="text" id="inputField" autofocus placeholder="Type here...">
+    </div>
+
+    <div id="game-over-screen">
+        <h1 id="game-over-heading">GAME OVER</h1>
+        <p>Your score: <span id="final-score">0</span></p>
+        <button id="replay-btn" class="retro-btn">Replay</button>
+    </div>
+
+    <script src="game.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

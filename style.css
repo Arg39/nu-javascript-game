@@ -1,0 +1,314 @@
+body {
+  font-family: "Press Start 2P", system-ui;
+  font-style: normal;
+  background-color: #000;
+  color: white;
+  text-align: center;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Screen 1: Welcome Screen */
+#welcome-screen {
+  position: fixed;
+  width: full;
+  height: screen;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fadeIn 2s ease-in-out;
+}
+
+.logo {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.img-logo {
+  width: 100px;
+  height: 100px;
+}
+
+.name-logo {
+  font-family: "Monofett", monospace;
+  font-weight: 200;
+  font-size: 60px;
+  text-align: left;
+  line-height: 90%;
+}
+#welcome-screen h2 {
+  display: inline-block;
+  font-size: 36px;
+  margin-bottom: 20px;
+  animation: float 3s infinite ease-in-out;
+}
+
+#welcome-screen h2 span {
+  display: inline-block; 
+  animation: colorChange 5s infinite linear;
+  animation-delay: calc(0.1s * var(--i)); 
+}
+
+#welcome-screen h3 {
+  font-size: 20px;
+  margin-bottom: 40px;
+  color: yellow;
+}
+
+#language-selector {
+  margin-bottom: 40px;
+}
+
+#language-selector label {
+  display: inline-block;
+  /* margin-top: 20px; */
+  margin-right: 20px;
+}
+
+.retro-checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  color: #fff;
+}
+
+.retro-checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #181818;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  position: relative;
+  transition: transform 0.1s ease; 
+}
+
+.retro-checkbox input[type="checkbox"]:active {
+  transform: scale(0.9); 
+}
+
+.retro-checkbox input[type="checkbox"]:checked {
+  background-color: #00ff00;
+}
+
+.retro-checkbox input[type="checkbox"]:checked::after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: #000;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.retro-btn {
+  font-size: 1.2em;
+  font-family: "Press Start 2P", cursive;
+  width: 160px;
+  height: 50px;
+  background: #00ff00;
+  border: 0px;
+  position: relative;
+  box-shadow: inset -4px 2px 1px 1px grey, inset -4px -2px 1px 1px lightgray,
+    inset 4px 0px 1px 1px lightgray;
+}
+
+.retro-btn:hover {
+  cursor: pointer;
+  background-color: #04db04;
+}
+
+.retro-btn:active {
+  top: 5px;
+  box-shadow: -4px 2px 1px 1px grey, -4px -2px 1px 1px lightgray,
+    4px 0px 1px 1px lightgray;
+}
+
+.retro-btn::after {
+  content: "";
+  background: black;
+  position: absolute;
+  left: -2.5%;
+  top: 0;
+  width: 105%;
+  height: 100%;
+  z-index: -1;
+}
+
+.retro-btn::before {
+  content: "";
+  background: black;
+  position: absolute;
+  left: 0;
+  top: -5%;
+  width: 100%;
+  height: 113%;
+  z-index: -1;
+}
+
+/* Screen 2: Game Screen */
+#game-screen {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000; 
+}
+
+/* Timer styling */
+#timer {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 32px; 
+  font-family: "Press Start 2P", cursive;
+  color: #ff0000; 
+  text-shadow: 2px 2px 4px #000; 
+}
+
+/* Word styling */
+.word {
+  position: absolute;
+  font-size: 32px; 
+  font-family: "Press Start 2P", cursive;
+  color: #00ff00; 
+  text-shadow: 1px 1px 3px #000; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
+  transform: translateX(-50%);
+  top: 0;
+  left: 50%;
+}
+
+#line {
+  position: absolute;
+  bottom: 30px; 
+  left: 0;
+  width: 100%;
+  height: 4px; 
+  background-color: #ff0000; 
+}
+
+/* Input field styling */
+#inputField {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px; 
+  padding: 10px;
+  width: 60%;
+  box-sizing: border-box;
+  background-color: #333; 
+  border: 3px solid #00ff00; 
+  color: #fff; 
+  border-radius: 5px;
+  font-family: "Press Start 2P", cursive; 
+}
+
+#inputField::placeholder {
+  color: #aaa; 
+}
+
+#inputField:focus {
+  outline: none;
+  border-color: #00ff00; 
+}
+
+/* Screen 3: Game Over Screen */
+#game-over-screen {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#game-over-screen h1 {
+  font-size: 48px;
+  margin-bottom: 40px;
+  color: #db2504;
+  display: inline; 
+}
+
+#game-over-screen h1 span {
+  display: inline-block; 
+  animation: growShrink 2s infinite ease-in-out;
+}
+
+#game-over-screen p {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+#game-over-screen #final-score {
+  font-weight: bold;
+}
+
+/* Correct and incorrect letters */
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    color: #ff4500;
+  }
+  25% {
+    color: #e87613;
+  }
+  50% {
+    color: #e813d6; 
+  }
+  75% {
+    color: #00ff00; 
+  }
+  100% {
+    color: #1e90ff; 
+  }
+}
+
+@keyframes growShrink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
